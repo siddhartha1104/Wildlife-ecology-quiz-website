@@ -1,10 +1,10 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: white;
+    background-color: #0A1A45; /* Dark blue background */
     margin: 0;
     padding: 20px;
-    color: #333;
+    color: #333; /* Dark text color */
 }
 
 .container {
@@ -12,6 +12,7 @@ body {
     margin: auto;
     padding: 30px;
     border-radius: 12px;
+    background-color: #ffffff; /* White background for the form container */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -19,6 +20,7 @@ h1 {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: #0A1A45; /* Dark blue text for the heading */
 }
 
 /* Question Styles */
@@ -31,6 +33,7 @@ label.question-label {
     margin: 10px 0;
     font-size: 1.2em;
     font-weight: bold;
+    color: #333; /* Dark text for question label */
 }
 
 label {
@@ -41,6 +44,7 @@ label {
     border-radius: 8px;
     border: 2px solid transparent;
     transition: background-color 0.3s, border 0.3s;
+    color: #333; /* Dark text for labels */
 }
 
 input[type="radio"] {
@@ -48,16 +52,16 @@ input[type="radio"] {
 }
 
 .selected {
-    background-color: rgba(173, 216, 230, 0.6);
+    background-color: rgba(173, 216, 230, 0.6); /* Light blue for selected options */
 }
 
 .correct {
-    background-color: #28a745;
+    background-color: #28a745; /* Green for correct answers */
     color: white;
 }
 
 .wrong {
-    background-color: #dc3545;
+    background-color: #dc3545; /* Red for wrong answers */
     color: white;
 }
 
@@ -65,7 +69,7 @@ button {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #5A00A1; /* Purple button */
     color: white;
     border: none;
     border-radius: 8px;
@@ -76,7 +80,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #450080; /* Darker purple on hover */
 }
 
 .hidden {
@@ -88,6 +92,7 @@ button:hover {
     margin-top: 10px;
     font-size: 1em;
 }
+
 /* Dropdown Styling */
 select {
     width: 100%;
@@ -96,12 +101,14 @@ select {
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1.1em;
+    background-color: #ffffff; /* White background for dropdown */
+    color: #333; /* Dark text for dropdown */
 }
-
 
 #result {
     margin-top: 20px;
     text-align: center;
+    color: #333; /* Dark text for result */
 }
 
 @media (max-width: 600px) {
