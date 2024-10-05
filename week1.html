@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildlife Ecology</title>
+    <title>Quiz Application - Week 1</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Link to Font Awesome for LinkedIn icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Select Your Quiz Week</h1>
-        <!-- Dropdown for selecting the week -->
+        <h1>Wildlife Ecology - Week 1</h1>
+
+        <!-- Dropdown to switch weeks -->
         <label for="week-select">Choose a week:</label>
         <select id="week-select">
             <option value="" disabled selected>Select a week</option>
@@ -26,28 +25,22 @@
             <option value="week9.html">Week 9</option>
             <option value="week10.html">Week 10</option>
             <option value="week11.html">Week 11</option>
-            <option value="week12.html">Week 12</option>
             <option value="all.html">All 120</option>
         </select>
         
-        <!-- Message for selecting a week -->
-        <p id="week-message">Please select a week to start your quiz.</p>
-        
-        <!-- Footer with links -->
-        <footer>
-            <p>
-                Made by: <a href="https://siddharthapathak.com.np" target="_blank">Siddhartha Pathak</a>
-                &nbsp;|&nbsp;
-                <a href="https://www.linkedin.com/in/siddharthapathak/" target="_blank" style="font-size: 1.5em; vertical-align: middle;">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                
-            </p>
-        </footer>
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <button type="submit" id="submit-btn">Submit Quiz</button>
+            <button type="button" id="try-again-btn" class="hidden">Try Again</button>
+            <div id="warning" class="warning hidden">Please answer all questions before submitting!</div>
+        </form>
+        <div id="result" class="hidden"></div>
     </div>
 
+    <script src="script1.js"></script> <!-- Week 1 questions script -->
+
     <script>
-        // Add event listener for week selection
+        // Add event listener for week selection to navigate between weeks
         document.getElementById("week-select").addEventListener("change", function() {
             const selectedWeek = this.value;
             if (selectedWeek) {

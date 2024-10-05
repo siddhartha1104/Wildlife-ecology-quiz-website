@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WildLife Ecology Quiz</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="app">
-      <h1>Wildlife Ecology Quiz - week 9</h1>
-      <ul>
-        <li>
-          <!-- <a href="#">Select Week</a> -->
-          <ul class="dropdown">
-            <li><a href="index.html">Week 1</a></li>
-            <li><a href="week2.html">Week 2</a></li>
-            <li><a href="week3.html">Week 3</a></li>
-            <li><a href="week4.html">Week 4</a></li>
-            <li><a href="week5.html">Week 5</a></li>
-            <li><a href="week6.html">Week 6</a></li>
-            <li><a href="week7.html">Week 7</a></li>
-            <li><a href="week8.html">Week 8</a></li>
-            <li><a href="week9.html">Week 9</a></li>
-            <li><a href="week10.html">Week 10</a></li>
-            <li><a href="week11.html">Week 11</a></li>
-            <li><a href="week12.html">Week 12</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="quiz">
-        <h2 id="question">Question goes here</h2>
-        <div id="answer-buttons">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
-        </div>
-        <button id="next-btn">Next</button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application - Week 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wildlife Ecology - Week 9</h1>
+
+        <!-- Dropdown to switch weeks -->
+        <label for="week-select">Choose a week:</label>
+        <select id="week-select">
+            <option value="" disabled selected>Select a week</option>
+            <option value="week1.html">Week 1</option>
+            <option value="week2.html">Week 2</option>
+            <option value="week3.html">Week 3</option>
+            <option value="week4.html">Week 4</option>
+            <option value="week5.html">Week 5</option>
+            <option value="week6.html">Week 6</option>
+            <option value="week7.html">Week 7</option>
+            <option value="week8.html">Week 8</option>
+            <option value="week9.html">Week 9</option>
+            <option value="week10.html">Week 10</option>
+            <option value="week11.html">Week 11</option>
+            <option value="week12.html">Week 12</option>
+            <option value="all.html">All 120</option>
+
+        </select>
+        
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <button type="submit" id="submit-btn">Submit Quiz</button>
+            <button type="button" id="try-again-btn" class="hidden">Try Again</button>
+            <div id="warning" class="warning hidden">Please answer all questions before submitting!</div>
+        </form>
+        <div id="result" class="hidden"></div>
     </div>
 
-    <script src="script9.js"></script>
-  </body>
+    <script src="script9.js"></script> <!-- Week 1 questions script -->
+
+    <script>
+        // Add event listener for week selection to navigate between weeks
+        document.getElementById("week-select").addEventListener("change", function() {
+            const selectedWeek = this.value;
+            if (selectedWeek) {
+                window.location.href = selectedWeek; // Redirect to selected week's HTML
+            }
+        });
+    </script>
+</body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application - Week 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wildlife Ecology - Week 11</h1>
+
+        <!-- Dropdown to switch weeks -->
+        <label for="week-select">Choose a week:</label>
+        <select id="week-select">
+            <option value="" disabled selected>Select a week</option>
+            <option value="week1.html">Week 1</option>
+            <option value="week2.html">Week 2</option>
+            <option value="week3.html">Week 3</option>
+            <option value="week4.html">Week 4</option>
+            <option value="week5.html">Week 5</option>
+            <option value="week6.html">Week 6</option>
+            <option value="week7.html">Week 7</option>
+            <option value="week8.html">Week 8</option>
+            <option value="week9.html">Week 9</option>
+            <option value="week10.html">Week 10</option>
+            <option value="week11.html">Week 11</option>
+            <option value="week12.html">Week 12</option>
+            <option value="all.html">All 120</option>
+
+        </select>
+        
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <button type="submit" id="submit-btn">Submit Quiz</button>
+            <button type="button" id="try-again-btn" class="hidden">Try Again</button>
+            <div id="warning" class="warning hidden">Please answer all questions before submitting!</div>
+        </form>
+        <div id="result" class="hidden"></div>
+    </div>
+
+    <script src="script11.js"></script> <!-- Week 1 questions script -->
+
+    <script>
+        // Add event listener for week selection to navigate between weeks
+        document.getElementById("week-select").addEventListener("change", function() {
+            const selectedWeek = this.value;
+            if (selectedWeek) {
+                window.location.href = selectedWeek; // Redirect to selected week's HTML
+            }
+        });
+    </script>
+</body>
+</html>

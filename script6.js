@@ -1,57 +1,57 @@
 const questions = [
     // 1
     {
-        question: "a climax caused by wildfires is an example of",
+        question: "A climax caused by wildfires is an example of:",
         answers: [
-            { text: "climatic climax", correct: false },
-            { text: "edaphic climax", correct: false },
-            { text: "disclimax", correct: false },
-            { text: "catastrophic climax", correct: true }
+            { text: "Climatic climax", correct: false },
+            { text: "Edaphic climax", correct: false },
+            { text: "Disclimax", correct: false },
+            { text: "Catastrophic climax", correct: true }
         ]
     },
     // 2
     {
-        question: "when compared to generalist species, specialist species have",
+        question: "When compared to generalist species, specialist species have:",
         answers: [
-            { text: "narrower niches", correct: true },
-            { text: "broader niches", correct: false },
-            { text: "same-size niches", correct: false },
-            { text: "none of these", correct: false }
+            { text: "Narrower niches", correct: true },
+            { text: "Broader niches", correct: false },
+            { text: "Same-size niches", correct: false },
+            { text: "None of these", correct: false }
         ]
     },
     // 3
     {
-        question: "which of these depicts correctly the lithosere primary succession",
+        question: "Which of these depicts correctly the lithosere primary succession?",
         answers: [
-            { text: "rock --> crustose lichen --> foliose lichen --> moss --> herbaceous stage --> shrub --> woodland --> climax", correct: true },
-            { text: "rock --> foliose lichen --> crustose lichen --> moss --> herbaceous stage --> shrub --> woodland --> climax", correct: false },
-            { text: "moss --> crustose lichen --> foliose lichen --> rock --> herbaceous stage --> shrub --> woodland --> climax", correct: false },
-            { text: "rock --> crustose lichen --> foliose lichen --> shrub --> herbaceous stage --> moss --> woodland --> climax", correct: false }
+            { text: "Rock --> crustose lichen --> foliose lichen --> moss --> herbaceous stage --> shrub --> woodland --> climax", correct: true },
+            { text: "Rock --> foliose lichen --> crustose lichen --> moss --> herbaceous stage --> shrub --> woodland --> climax", correct: false },
+            { text: "Moss --> crustose lichen --> foliose lichen --> rock --> herbaceous stage --> shrub --> woodland --> climax", correct: false },
+            { text: "Rock --> crustose lichen --> foliose lichen --> shrub --> herbaceous stage --> moss --> woodland --> climax", correct: false }
         ]
     },
     // 4
     {
-        question: "importance value can be written as",
+        question: "Importance value can be written as:",
         answers: [
-            { text: "relative density + relative frequency X relative dominance", correct: false },
-            { text: "relative density X relative frequency + relative dominance", correct: false },
-            { text: "relative density + relative frequency + relative dominance", correct: true },
-            { text: "relative density X relative frequency X relative dominance", correct: false }
+            { text: "Relative density + relative frequency X relative dominance", correct: false },
+            { text: "Relative density X relative frequency + relative dominance", correct: false },
+            { text: "Relative density + relative frequency + relative dominance", correct: true },
+            { text: "Relative density X relative frequency X relative dominance", correct: false }
         ]
     },
     // 5
     {
-        question: "lithosere is an example of",
+        question: "Lithosere is an example of:",
         answers: [
-            { text: "hydrosere", correct: false },
-            { text: "xerosere", correct: true },
-            { text: "psammosere", correct: false },
-            { text: "halosere", correct: false }
+            { text: "Hydrosere", correct: false },
+            { text: "Xerosere", correct: true },
+            { text: "Psammosere", correct: false },
+            { text: "Halosere", correct: false }
         ]
     },
     // 6
     {
-        question: "importance value varies from",
+        question: "Importance value varies from:",
         answers: [
             { text: "0 to 10", correct: false },
             { text: "0 to 50", correct: false },
@@ -61,147 +61,157 @@ const questions = [
     },
     // 7
     {
-        question: "a species found most frequently in a particular community, but also present occasionally in others is called",
+        question: "A species found most frequently in a particular community, but also present occasionally in others is called:",
         answers: [
-            { text: "accidental species", correct: false },
-            { text: "indifferent species", correct: false },
-            { text: "selective species", correct: true },
-            { text: "exclusive species", correct: false }
+            { text: "Accidental species", correct: false },
+            { text: "Indifferent species", correct: false },
+            { text: "Selective species", correct: true },
+            { text: "Exclusive species", correct: false }
         ]
     },
     // 8
     {
-        question: "the climax near Tindi village is being controlled by disturbance by cattle. this is an example of",
+        question: "The climax near Tindi village is being controlled by disturbance by cattle. This is an example of:",
         answers: [
-            { text: "climatic climax", correct: false },
-            { text: "edaphic climax", correct: false },
-            { text: "disclimax", correct: true },
-            { text: "catastrophic climax", correct: false }
+            { text: "Climatic climax", correct: false },
+            { text: "Edaphic climax", correct: false },
+            { text: "Disclimax", correct: true },
+            { text: "Catastrophic climax", correct: false }
         ]
     },
     // 9
     {
-        question: "which of these is correct?",
+        question: "Which of these is correct?",
         answers: [
-            { text: "a. fundamental niche > realised niche", correct: false },
-            { text: "b. fundamental niche = realised niche", correct: false },
-            { text: "c. fundamental niche < realised niche", correct: false },
-            { text: "a or b", correct: true }
+            { text: "A. Fundamental niche > Realised niche", correct: false },
+            { text: "B. Fundamental niche = Realised niche", correct: false },
+            { text: "C. Fundamental niche < Realised niche", correct: false },
+            { text: "A or B", correct: true }
         ]
     },
     // 10
     {
-        question: "which of these is not a characteristic of pioneer species?",
+        question: "Which of these is not a characteristic of pioneer species?",
         answers: [
-            { text: "ability to grow on bare rocks", correct: false },
-            { text: "ability to tolerate extreme temperatures", correct: false },
-            { text: "large size", correct: true },
-            { text: "short life span", correct: false }
+            { text: "Ability to grow on bare rocks", correct: false },
+            { text: "Ability to tolerate extreme temperatures", correct: false },
+            { text: "Large size", correct: true },
+            { text: "Short life span", correct: false }
         ]
     }
 ];
 
-// Shuffle questions function
-function shuffleQuestions(array) {
+
+// Shuffle Function
+const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-}
+};
 
-// Shuffle answers function
-function shuffleAnswers(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    shuffleQuestions(questions); // Shuffle questions
-    showQuestion();
-}
-
-function showQuestion() {
-    resetState();
-
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
-    shuffleAnswers(currentQuestion.answers); // Shuffle answers
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
+// Shuffle Questions and Answers
+const prepareQuiz = () => {
+    shuffleArray(questions);
+    questions.forEach(question => {
+        shuffleArray(question.answers);
     });
-}
+};
 
-function resetState() {
-    nextButton.style.display = "none";
-    while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
-}
-
-function selectAnswer(e) {
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-
-    if (isCorrect) {
-        selectedBtn.classList.add("correct");
-        score++;
-    } else {
-        selectedBtn.classList.add("incorrect");
-    }
-    Array.from(answerButtons.children).forEach(button => {
-        if (button.dataset.correct === "true") {
-            button.classList.add("correct");
-        }
-        button.disabled = true;
+// Display Questions
+const displayQuestions = () => {
+    const questionsContainer = document.getElementById("questions-container");
+    questionsContainer.innerHTML = '';
+    questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question');
+        questionDiv.innerHTML = `
+            <label class="question-label">${index + 1}. ${question.question}</label>
+            ${question.answers.map((answer, answerIndex) => `
+                <label>
+                    <input type="radio" name="question${index}" value="${answer.text}" required>
+                    ${answer.text}
+                </label>
+            `).join('')}
+        `;
+        questionsContainer.appendChild(questionDiv);
     });
-    nextButton.style.display = "block";
-}
+};
 
-function showScore() {
-    resetState();
-    questionElement.innerHTML = `Score: ${score} / ${questions.length}`;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
-}
+// Handle Form Submission
+const handleSubmit = (event) => {
+    event.preventDefault();
+    const userAnswers = Array.from(document.querySelectorAll('input[type="radio"]:checked'));
+    const resultDiv = document.getElementById("result");
+    const warningDiv = document.getElementById("warning");
+    const submitButton = document.getElementById("submit-btn");
+    const tryAgainButton = document.getElementById("try-again-btn");
+    warningDiv.classList.add('hidden');
 
-function handleNextButton() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showScore();
+    if (userAnswers.length !== questions.length) {
+        warningDiv.classList.remove('hidden');
+        return;
     }
-}
 
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-        handleNextButton();
-    } else {
-        startQuiz();
-    }
+    let score = 0;
+
+    // Clear previous result
+    resultDiv.innerHTML = '';
+    
+    userAnswers.forEach((answer, index) => {
+        const selectedAnswer = answer.value;
+        const correctAnswer = questions[index].answers.find(ans => ans.correct).text;
+
+        // Highlight the option the user selected
+        const options = document.querySelectorAll(`input[name="question${index}"]`);
+        options.forEach(option => {
+            const label = option.parentElement;
+
+            // Add classes based on correctness
+            if (option.checked) {
+                label.classList.add('selected'); // Highlight selected option
+            }
+            if (option.value === correctAnswer) {
+                label.classList.add('correct'); // Highlight correct option in green
+            } else if (option.value === selectedAnswer) {
+                label.classList.add('wrong'); // Highlight incorrect selected option in red
+            }
+        });
+
+        // Update score
+        if (selectedAnswer === correctAnswer) {
+            score++;
+        }
+    });
+
+    // Show results
+    resultDiv.innerHTML = `<h2>Your Score: ${score}/${questions.length}</h2>`;
+    resultDiv.classList.remove('hidden');
+
+    // Hide submit button and show try again button
+    submitButton.classList.add('hidden');
+    tryAgainButton.classList.remove('hidden');
+};
+
+// Reset Quiz
+const resetQuiz = () => {
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.reset(); // Reset the form
+    prepareQuiz(); // Shuffle questions and options
+    displayQuestions(); // Display the questions again
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = ''; // Clear previous results
+    resultDiv.classList.add('hidden'); // Hide the result section
+    document.getElementById("submit-btn").classList.remove('hidden'); // Show submit button
+    document.getElementById("try-again-btn").classList.add('hidden'); // Hide try again button
+};
+
+// Initialize Quiz
+document.addEventListener("DOMContentLoaded", () => {
+    prepareQuiz();
+    displayQuestions();
+
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.addEventListener("submit", handleSubmit);
+    document.getElementById("try-again-btn").addEventListener("click", resetQuiz);
 });
-
-startQuiz();

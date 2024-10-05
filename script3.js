@@ -1,52 +1,53 @@
+// Questions for Week 2
 const questions = [
     // 1
     {
-        question: "birds on giraffe are an example of",
+        question: "Birds on giraffe are an example of",
         answers: [
-            { text: "colony", correct: false },
-            { text: "commensalism", correct: false },
-            { text: "protocooperation", correct: true },
-            { text: "allelopathy", correct: false }
+            { text: "Colony", correct: false },
+            { text: "Commensalism", correct: false },
+            { text: "Protocooperation", correct: true },
+            { text: "Allelopathy", correct: false }
         ]
     },
     // 2
     {
-        question: "egrets with buffaloes are an example of",
+        question: "Egrets with buffaloes are an example of",
         answers: [
-            { text: "colony", correct: false },
-            { text: "commensalism", correct: true },
-            { text: "protocooperation", correct: false },
-            { text: "allelopathy", correct: false }
+            { text: "Colony", correct: false },
+            { text: "Commensalism", correct: true },
+            { text: "Protocooperation", correct: false },
+            { text: "Allelopathy", correct: false }
         ]
     },
     // 3
     {
-        question: "the scientific study of animal behaviour is called",
+        question: "The scientific study of animal behaviour is called",
         answers: [
-            { text: "behaviourism", correct: false },
-            { text: "ecology", correct: false },
-            { text: "ethology", correct: true },
-            { text: "prey-predator dynamics", correct: false }
+            { text: "Behaviourism", correct: false },
+            { text: "Ecology", correct: false },
+            { text: "Ethology", correct: true },
+            { text: "Prey-predator dynamics", correct: false }
         ]
     },
     // 4
     {
-        question: "the interaction between exotic shrubs and trees through the action of seed predators is an example of",
+        question: "The interaction between exotic shrubs and trees through the action of seed predators is an example of",
         answers: [
-            { text: "infraspecific competition", correct: false },
-            { text: "apparent competition", correct: true },
-            { text: "disguised competition", correct: false },
-            { text: "harmonious competition", correct: false }
+            { text: "Infraspecific competition", correct: false },
+            { text: "Apparent competition", correct: true },
+            { text: "Disguised competition", correct: false },
+            { text: "Harmonious competition", correct: false }
         ]
     },
     // 5
     {
-        question: "harmonious competition occurs where",
+        question: "Harmonious competition occurs where",
         answers: [
-            { text: "at least one participant is benefited", correct: false },
-            { text: "at least one participant is unharmed", correct: false },
-            { text: "both participants are benefited", correct: true },
-            { text: "both participants are unharmed", correct: false }
+            { text: "At least one participant is benefited", correct: false },
+            { text: "At least one participant is unharmed", correct: false },
+            { text: "Both participants are benefited", correct: true },
+            { text: "Both participants are unharmed", correct: false }
         ]
     },
     // 6
@@ -61,141 +62,157 @@ const questions = [
     },
     // 7
     {
-        question: "trampling of grass due to the movement of animals is an example of",
+        question: "Trampling of grass due to the movement of animals is an example of",
         answers: [
-            { text: "mutualism", correct: false },
-            { text: "ammensalism", correct: true },
-            { text: "commensalism", correct: false },
-            { text: "protocooperation", correct: false }
+            { text: "Mutualism", correct: false },
+            { text: "Ammensalism", correct: true },
+            { text: "Commensalism", correct: false },
+            { text: "Protocooperation", correct: false }
         ]
     },
     // 8
     {
         question: "I observe a monkey take a tick out of another monkey's head and eat it. In the social context, this behaviour would be called",
         answers: [
-            { text: "tick hunting", correct: false },
-            { text: "auto grooming", correct: false },
-            { text: "allo grooming", correct: true },
-            { text: "foraging", correct: false }
+            { text: "Tick hunting", correct: false },
+            { text: "Auto grooming", correct: false },
+            { text: "Allo grooming", correct: true },
+            { text: "Foraging", correct: false }
         ]
     },
     // 9
     {
-        question: "an inventory of behaviours exhibited by an animal during a behaviour exercise is called",
+        question: "An inventory of behaviours exhibited by an animal during a behaviour exercise is called",
         answers: [
-            { text: "ecogram", correct: false },
-            { text: "ethogram", correct: true },
-            { text: "behaviourogram", correct: false },
-            { text: "animalogram", correct: false }
+            { text: "Ecogram", correct: false },
+            { text: "Ethogram", correct: true },
+            { text: "Behaviourogram", correct: false },
+            { text: "Animalogram", correct: false }
         ]
     },
     // 10
     {
         question: "I observe a bird take a tick out of another bird's head and eat it. In the social context, this behaviour would be called",
         answers: [
-            { text: "tick hunting", correct: false },
-            { text: "auto grooming", correct: false },
-            { text: "allo grooming", correct: true },
-            { text: "foraging", correct: false }
+            { text: "Tick hunting", correct: false },
+            { text: "Auto grooming", correct: false },
+            { text: "Allo grooming", correct: true },
+            { text: "Foraging", correct: false }
         ]
     }
 ];
 
-const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
 
-let currentQuestionIndex = 0;
-let score = 0;
-
-// Function to shuffle an array
-function shuffle(array) {
+// Shuffle Function
+const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-}
+};
 
-// Shuffle the questions before starting the quiz
-function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    shuffle(questions); // Shuffle questions
-    nextButton.innerHTML = "Next";
-    showQuestion();
-}
-
-function showQuestion() {
-    resetState();
-
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
-    // Shuffle answers before displaying
-    shuffle(currentQuestion.answers);
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
+// Shuffle Questions and Answers
+const prepareQuiz = () => {
+    shuffleArray(questions);
+    questions.forEach(question => {
+        shuffleArray(question.answers);
     });
-}
+};
 
-function resetState() {
-    nextButton.style.display = "none";
-    while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
-}
-
-function selectAnswer(e) {
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct == "true";
-
-    if (isCorrect) {
-        selectedBtn.classList.add("correct");
-        score++;
-    } else {
-        selectedBtn.classList.add("incorrect");
-    }
-    Array.from(answerButtons.children).forEach(button => {
-        if (button.dataset.correct === "true") {
-            button.classList.add("correct");
-        }
-        button.disabled = true;
+// Display Questions
+const displayQuestions = () => {
+    const questionsContainer = document.getElementById("questions-container");
+    questionsContainer.innerHTML = '';
+    questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question');
+        questionDiv.innerHTML = `
+            <label class="question-label">${index + 1}. ${question.question}</label>
+            ${question.answers.map((answer, answerIndex) => `
+                <label>
+                    <input type="radio" name="question${index}" value="${answer.text}" required>
+                    ${answer.text}
+                </label>
+            `).join('')}
+        `;
+        questionsContainer.appendChild(questionDiv);
     });
-    nextButton.style.display = "block";
-}
+};
 
-function showScore() {
-    resetState();
-    questionElement.innerHTML = `Score: ${score} / ${questions.length}`;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
-}
+// Handle Form Submission
+const handleSubmit = (event) => {
+    event.preventDefault();
+    const userAnswers = Array.from(document.querySelectorAll('input[type="radio"]:checked'));
+    const resultDiv = document.getElementById("result");
+    const warningDiv = document.getElementById("warning");
+    const submitButton = document.getElementById("submit-btn");
+    const tryAgainButton = document.getElementById("try-again-btn");
+    warningDiv.classList.add('hidden');
 
-function handleNextButton() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showScore();
+    if (userAnswers.length !== questions.length) {
+        warningDiv.classList.remove('hidden');
+        return;
     }
-}
 
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-        handleNextButton();
-    } else {
-        startQuiz();
-    }
+    let score = 0;
+
+    // Clear previous result
+    resultDiv.innerHTML = '';
+    
+    userAnswers.forEach((answer, index) => {
+        const selectedAnswer = answer.value;
+        const correctAnswer = questions[index].answers.find(ans => ans.correct).text;
+
+        // Highlight the option the user selected
+        const options = document.querySelectorAll(`input[name="question${index}"]`);
+        options.forEach(option => {
+            const label = option.parentElement;
+
+            // Add classes based on correctness
+            if (option.checked) {
+                label.classList.add('selected'); // Highlight selected option
+            }
+            if (option.value === correctAnswer) {
+                label.classList.add('correct'); // Highlight correct option in green
+            } else if (option.value === selectedAnswer) {
+                label.classList.add('wrong'); // Highlight incorrect selected option in red
+            }
+        });
+
+        // Update score
+        if (selectedAnswer === correctAnswer) {
+            score++;
+        }
+    });
+
+    // Show results
+    resultDiv.innerHTML = `<h2>Your Score: ${score}/${questions.length}</h2>`;
+    resultDiv.classList.remove('hidden');
+
+    // Hide submit button and show try again button
+    submitButton.classList.add('hidden');
+    tryAgainButton.classList.remove('hidden');
+};
+
+// Reset Quiz
+const resetQuiz = () => {
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.reset(); // Reset the form
+    prepareQuiz(); // Shuffle questions and options
+    displayQuestions(); // Display the questions again
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = ''; // Clear previous results
+    resultDiv.classList.add('hidden'); // Hide the result section
+    document.getElementById("submit-btn").classList.remove('hidden'); // Show submit button
+    document.getElementById("try-again-btn").classList.add('hidden'); // Hide try again button
+};
+
+// Initialize Quiz
+document.addEventListener("DOMContentLoaded", () => {
+    prepareQuiz();
+    displayQuestions();
+
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.addEventListener("submit", handleSubmit);
+    document.getElementById("try-again-btn").addEventListener("click", resetQuiz);
 });
-
-startQuiz();

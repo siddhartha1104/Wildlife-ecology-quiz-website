@@ -1,37 +1,38 @@
+
 const questions = [
     // 1
     {
-        question: "which of these is a positive check according to Malthus?",
+        question: "Which of these is a positive check according to Malthus?",
         answers: [
-            { text: "late marriage", correct: false },
-            { text: "war", correct: true },
-            { text: "celibacy", correct: false },
-            { text: "moral restraint", correct: false }
+            { text: "Late marriage", correct: false },
+            { text: "War", correct: true },
+            { text: "Celibacy", correct: false },
+            { text: "Moral restraint", correct: false }
         ]
     },
     // 2
     {
-        question: "the demographic transition sees a society move from",
+        question: "The demographic transition sees a society move from",
         answers: [
-            { text: "high birth rate, low death rate to low birth rate, low death rate", correct: false },
-            { text: "low birth rate, high death rate to low birth rate, low death rate", correct: false },
-            { text: "high birth rate, high death rate to low birth rate, low death rate", correct: true },
-            { text: "high birth rate, high death rate to low birth rate, high death rate", correct: false }
+            { text: "High birth rate, low death rate to low birth rate, low death rate", correct: false },
+            { text: "Low birth rate, high death rate to low birth rate, low death rate", correct: false },
+            { text: "High birth rate, high death rate to low birth rate, low death rate", correct: true },
+            { text: "High birth rate, high death rate to low birth rate, high death rate", correct: false }
         ]
     },
     // 3
     {
-        question: "according to Malthusian model",
+        question: "According to the Malthusian model",
         answers: [
-            { text: "population grows in geometric progression, food supply increases in arithmetic progression", correct: true },
-            { text: "population grows in geometric progression, food supply increases in geometric progression", correct: false },
-            { text: "population grows in arithmetic progression, food supply increases in arithmetic progression", correct: false },
-            { text: "population grows in arithmetic progression, food supply increases in geometric progression", correct: false }
+            { text: "Population grows in geometric progression, food supply increases in arithmetic progression", correct: true },
+            { text: "Population grows in geometric progression, food supply increases in geometric progression", correct: false },
+            { text: "Population grows in arithmetic progression, food supply increases in arithmetic progression", correct: false },
+            { text: "Population grows in arithmetic progression, food supply increases in geometric progression", correct: false }
         ]
     },
     // 4
     {
-        question: "the book 'An essay on the principle of population' was written by",
+        question: "The book 'An Essay on the Principle of Population' was written by",
         answers: [
             { text: "Darwin", correct: false },
             { text: "Malthus", correct: true },
@@ -43,55 +44,55 @@ const questions = [
     {
         question: "_______ is used to identify which potential impacts are relevant to assess.",
         answers: [
-            { text: "screening", correct: false },
-            { text: "scoping", correct: true },
-            { text: "reporting", correct: false },
-            { text: "review", correct: false }
+            { text: "Screening", correct: false },
+            { text: "Scoping", correct: true },
+            { text: "Reporting", correct: false },
+            { text: "Review", correct: false }
         ]
     },
     // 6
     {
-        question: "which of these is preventive check according to Malthus?",
+        question: "Which of these is a preventive check according to Malthus?",
         answers: [
-            { text: "foresight", correct: true },
-            { text: "vice", correct: false },
-            { text: "misery", correct: false },
-            { text: "flood", correct: false }
+            { text: "Foresight", correct: true },
+            { text: "Vice", correct: false },
+            { text: "Misery", correct: false },
+            { text: "Flood", correct: false }
         ]
     },
     // 7
     {
         question: "______ determines which projects or developments require a full or partial impact assessment study.",
         answers: [
-            { text: "screening", correct: true },
-            { text: "scoping", correct: false },
-            { text: "reporting", correct: false },
-            { text: "review", correct: false }
+            { text: "Screening", correct: true },
+            { text: "Scoping", correct: false },
+            { text: "Reporting", correct: false },
+            { text: "Review", correct: false }
         ]
     },
     // 8
     {
-        question: "which of these is a pillar of sustainability",
+        question: "Which of these is a pillar of sustainability?",
         answers: [
-            { text: "social sustainability", correct: true },
-            { text: "industrial sustainability", correct: false },
-            { text: "agricultural sustainability", correct: false },
-            { text: "trans-boundary sustainability", correct: false }
+            { text: "Social sustainability", correct: true },
+            { text: "Industrial sustainability", correct: false },
+            { text: "Agricultural sustainability", correct: false },
+            { text: "Trans-boundary sustainability", correct: false }
         ]
     },
     // 9
     {
-        question: "which of these is not a pillar of sustainability ?",
+        question: "Which of these is not a pillar of sustainability?",
         answers: [
-            { text: "environmental sustainability", correct: false },
-            { text: "economic sustainability", correct: false },
-            { text: "trans-boundary sustainability", correct: true },
-            { text: "agricultural sustainability", correct: false }
+            { text: "Environmental sustainability", correct: false },
+            { text: "Economic sustainability", correct: false },
+            { text: "Trans-boundary sustainability", correct: true },
+            { text: "Agricultural sustainability", correct: false }
         ]
     },
     // 10
     {
-        question: "the quantum of human impacts is given by",
+        question: "The quantum of human impacts is given by",
         answers: [
             { text: "I = P X A X T", correct: true },
             { text: "I = P + A + T", correct: false },
@@ -101,108 +102,116 @@ const questions = [
     }
 ];
 
-// Shuffle function for questions
-function shuffleQuestions(array) {
+// Shuffle Function
+const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-}
+};
 
-// Shuffle function for answers
-function shuffleAnswers(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// Shuffle questions and their answers
-shuffleQuestions(questions);
-questions.forEach(question => shuffleAnswers(question.answers));
-
-const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
-}
-
-function showQuestion() {
-    resetState();
-
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
+// Shuffle Questions and Answers
+const prepareQuiz = () => {
+    shuffleArray(questions);
+    questions.forEach(question => {
+        shuffleArray(question.answers);
     });
-}
+};
 
-function resetState() {
-    nextButton.style.display = "none";
-    while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
-}
-
-function selectAnswer(e) {
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct == "true";
-
-    if (isCorrect) {
-        selectedBtn.classList.add("correct");
-        score++;
-    } else {
-        selectedBtn.classList.add("incorrect");
-    }
-    Array.from(answerButtons.children).forEach(button => {
-        if (button.dataset.correct === "true") {
-            button.classList.add("correct");
-        }
-        button.disabled = true;
+// Display Questions
+const displayQuestions = () => {
+    const questionsContainer = document.getElementById("questions-container");
+    questionsContainer.innerHTML = '';
+    questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question');
+        questionDiv.innerHTML = `
+            <label class="question-label">${index + 1}. ${question.question}</label>
+            ${question.answers.map((answer, answerIndex) => `
+                <label>
+                    <input type="radio" name="question${index}" value="${answer.text}" required>
+                    ${answer.text}
+                </label>
+            `).join('')}
+        `;
+        questionsContainer.appendChild(questionDiv);
     });
-    nextButton.style.display = "block";
-}
+};
 
-function showScore() {
-    resetState();
-    questionElement.innerHTML = `Score: ${score} / ${questions.length}`;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
-}
+// Handle Form Submission
+const handleSubmit = (event) => {
+    event.preventDefault();
+    const userAnswers = Array.from(document.querySelectorAll('input[type="radio"]:checked'));
+    const resultDiv = document.getElementById("result");
+    const warningDiv = document.getElementById("warning");
+    const submitButton = document.getElementById("submit-btn");
+    const tryAgainButton = document.getElementById("try-again-btn");
+    warningDiv.classList.add('hidden');
 
-function handleNextButton() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showScore();
+    if (userAnswers.length !== questions.length) {
+        warningDiv.classList.remove('hidden');
+        return;
     }
-}
 
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-        handleNextButton();
-    } else {
-        startQuiz();
-    }
+    let score = 0;
+
+    // Clear previous result
+    resultDiv.innerHTML = '';
+    
+    userAnswers.forEach((answer, index) => {
+        const selectedAnswer = answer.value;
+        const correctAnswer = questions[index].answers.find(ans => ans.correct).text;
+
+        // Highlight the option the user selected
+        const options = document.querySelectorAll(`input[name="question${index}"]`);
+        options.forEach(option => {
+            const label = option.parentElement;
+
+            // Add classes based on correctness
+            if (option.checked) {
+                label.classList.add('selected'); // Highlight selected option
+            }
+            if (option.value === correctAnswer) {
+                label.classList.add('correct'); // Highlight correct option in green
+            } else if (option.value === selectedAnswer) {
+                label.classList.add('wrong'); // Highlight incorrect selected option in red
+            }
+        });
+
+        // Update score
+        if (selectedAnswer === correctAnswer) {
+            score++;
+        }
+    });
+
+    // Show results
+    resultDiv.innerHTML = `<h2>Your Score: ${score}/${questions.length}</h2>`;
+    resultDiv.classList.remove('hidden');
+
+    // Hide submit button and show try again button
+    submitButton.classList.add('hidden');
+    tryAgainButton.classList.remove('hidden');
+};
+
+// Reset Quiz
+const resetQuiz = () => {
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.reset(); // Reset the form
+    prepareQuiz(); // Shuffle questions and options
+    displayQuestions(); // Display the questions again
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = ''; // Clear previous results
+    resultDiv.classList.add('hidden'); // Hide the result section
+    document.getElementById("submit-btn").classList.remove('hidden'); // Show submit button
+    document.getElementById("try-again-btn").classList.add('hidden'); // Hide try again button
+};
+
+// Initialize Quiz
+document.addEventListener("DOMContentLoaded", () => {
+    prepareQuiz();
+    displayQuestions();
+
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.addEventListener("submit", handleSubmit);
+    document.getElementById("try-again-btn").addEventListener("click", resetQuiz);
 });
-
-startQuiz();
