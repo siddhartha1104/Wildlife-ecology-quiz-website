@@ -4,94 +4,94 @@ const questions = [
         answers:[
             {text: "Theophrastus", correct: true},
             {text: "Linnaeus", correct: false},
-            {text: " Malthus", correct: false},
-            {text: " Humboldt", correct: false}
+            {text: "Malthus", correct: false},
+            {text: "Humboldt", correct: false}
         ]
     },
     {
         question: "In the Greek word root of Ecology, Oikos refers to",
         answers:[
-            {text: "household ", correct: true},
-            {text: "preservation  ", correct: false},
-            {text: "environment", correct: false},
-            {text: "study", correct: false}
+            {text: "Household", correct: true},
+            {text: "Preservation", correct: false},
+            {text: "Environment", correct: false},
+            {text: "Study", correct: false}
         ]
     },
     {
-        question: "In the Greek word root of Ecology, logos refers to ",
+        question: "In the Greek word root of Ecology, logos refers to",
         answers:[
-            {text: "household", correct: false},
-            {text: "preservation", correct: false},
-            {text: "environment", correct: false},
-            {text: "study ", correct: true},
+            {text: "Household", correct: false},
+            {text: "Preservation", correct: false},
+            {text: "Environment", correct: false},
+            {text: "Study", correct: true}
         ]
     },
     {
         question: "Ecology is the scientific study of interactions among organisms and their_____. (fill in the blanks)",
         answers:[
-            {text: "habitat", correct: false},
-            {text: "niche", correct: false},
-            {text: "environment", correct: true},
-            {text: "population ", correct: false},
+            {text: "Habitat", correct: false},
+            {text: "Niche", correct: false},
+            {text: "Environment", correct: true},
+            {text: "Population", correct: false}
         ]
     },
     {
         question: "Who amongst these is considered the father of Biogeography?",
         answers:[
             {text: "Theophrastus", correct: false},
-            {text: " Linnaeus", correct: false},
-            {text: " Malthus", correct: false},
-            {text: " Humboldt ", correct: true},
-        ]
-    },
-    {
-        question: "Which of these is not a characteristics of fitness?",
-        answers:[
-            {text: " Fitness id environment- specific ", correct: false},
-            {text: " Fitness is species- specific ", correct: false},
-            {text: " Higher reproductive rate means higher fitness ", correct: true},
-            {text: "Fitness should be measured across several generations  ", correct: false},
-        ]
-    },
-    {
-        question: "Which of these is not a kind of selection",
-        answers:[
-            {text: " directional ", correct: false},
-            {text: "  stochastic ", correct: true},
-            {text: "  disruptive ", correct: false},
-            {text: " stabilising ", correct: false},
-        ]
-    },
-    {
-        question: "Ecology is the scientific study of _______that determine the distribution and abundance of organisms. (Fill in the blanks)",
-        answers:[
-            {text: "statics", correct: false},
-            {text: "interactions", correct: true},
-            {text: "dynamics", correct: false},
-            {text: "habitat", correct: false},
+            {text: "Linnaeus", correct: false},
+            {text: "Malthus", correct: false},
+            {text: "Humboldt", correct: true}
         ]
     },
     {
         question: "Which of these is not a characteristic of fitness?",
         answers:[
-            {text: "Fitness is environment-specific.", correct: false},
-            {text: "Fitness is species-specific.", correct: false},
-            {text: "Fitness works on traits such as size and speed.", correct: true},
-            {text: "Fitness should be measured across several generations.", correct: false},
+            {text: "Fitness is environment-specific", correct: false},
+            {text: "Fitness is species-specific", correct: false},
+            {text: "Higher reproductive rate means higher fitness", correct: true},
+            {text: "Fitness should be measured across several generations", correct: false}
+        ]
+    },
+    {
+        question: "Which of these is not a kind of selection?",
+        answers:[
+            {text: "Directional", correct: false},
+            {text: "Stochastic", correct: true},
+            {text: "Disruptive", correct: false},
+            {text: "Stabilising", correct: false}
+        ]
+    },
+    {
+        question: "Ecology is the scientific study of _______that determine the distribution and abundance of organisms. (Fill in the blanks)",
+        answers:[
+            {text: "Statics", correct: false},
+            {text: "Interactions", correct: true},
+            {text: "Dynamics", correct: false},
+            {text: "Habitat", correct: false}
+        ]
+    },
+    {
+        question: "Which of these is not a characteristic of fitness?",
+        answers:[
+            {text: "Fitness is environment-specific", correct: false},
+            {text: "Fitness is species-specific", correct: false},
+            {text: "Fitness works on traits such as size and speed", correct: true},
+            {text: "Fitness should be measured across several generations", correct: false}
         ]
     },
     {
         question: "Which of these is not a step in natural selection?",
         answers:[
-            {text: "variation", correct: false},
-            {text: "underpopulation", correct: true},
-            {text: "struggle for existence", correct: false},
-            {text: "survival of the fittest", correct: false},
+            {text: "Variation", correct: false},
+            {text: "Underpopulation", correct: true},
+            {text: "Struggle for existence", correct: false},
+            {text: "Survival of the fittest", correct: false}
         ]
-    },
-
+    }
 ];
 
+// Get the necessary HTML elements
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -99,20 +99,32 @@ const nextButton = document.getElementById("next-btn");
 let currentQuestionIndex = 0;
 let score = 0;
 
+// Function to shuffle an array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Shuffle the questions before starting the quiz
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
+    shuffle(questions);  // Shuffle questions
     nextButton.innerHTML = "Next";
     showQuestion();
 }
- 
-function showQuestion(){
 
+function showQuestion(){
     resetState();
 
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+    // Shuffle answers before displaying
+    shuffle(currentQuestion.answers);
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -178,4 +190,3 @@ nextButton.addEventListener("click", ()=>{
 });
 
 startQuiz();
-
