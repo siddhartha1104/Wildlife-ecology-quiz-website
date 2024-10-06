@@ -104,6 +104,9 @@ select {
     background-color: #ffffff; /* White background for dropdown */
     color: #333; /* Dark text for dropdown */
 }
+.warning{
+    color: red;
+}
 
 #result {
     margin-top: 20px;
