@@ -46,8 +46,8 @@ const questions = [
         answers: [
             { text: "At least one participant is benefited", correct: false },
             { text: "At least one participant is unharmed", correct: false },
-            { text: "Both participants are benefited", correct: true },
-            { text: "Both participants are unharmed", correct: false }
+            { text: "Both participants are benefited", correct: false },
+            { text: "Both participants are unharmed", correct: true }
         ]
     },
     // 6
